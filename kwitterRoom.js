@@ -25,7 +25,7 @@ function addRoom()
 
     localStorage.setItem("roomName", roomName);
     
-    window.location = "kwitterPage.html";
+    window.location = "kwitterpage.html";
 }
 
 function getData() {  firebase.database().ref("/").on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key;
