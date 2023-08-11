@@ -28,6 +28,12 @@ function addRoom()
     window.location = "kwitterpage.html";
 }
 
+function redirectToRoomName(name)
+{
+  console.log(name);
+  localStorage.setItem("roomName", name);
+    window.location = "kwitterpage.html";
+}
 function getData() {  firebase.database().ref("/").on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key;
        roomNames = childKey;
        console.log("Nome da Sala - " + roomNames);
@@ -40,12 +46,7 @@ function getData() {  firebase.database().ref("/").on('value', function(snapshot
 
 getData();
 
-function redirectToRoomName(name)
-{
-  console.log(name);
-  localStorage.setItem("roomName", name);
-    window.location = "kwitterpage.html";
-}
+
 
 function logout() {
 localStorage.removeItem("userName");
